@@ -2,9 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.3.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
+    id 'idea'
 }
 
-group = 'page.pavel'
+group = 'marketplace'
 version = 'latest'
 sourceCompatibility = '11'
 
@@ -16,12 +17,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    compile group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.3'
+    compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.3'
+//    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     runtimeOnly 'com.h2database:h2'
-//    runtimeOnly 'mysql:mysql-connector-java'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
